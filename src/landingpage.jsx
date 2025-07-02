@@ -1,26 +1,29 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => (
+  <nav className="flex items-center justify-between px-8 py-6 border-b shadow-sm bg-white transition-all duration-300">
+    <div className="text-3xl font-bold text-purple-700 hover:text-purple-800 transition-colors duration-300 cursor-pointer">Kaamigo</div>
+    <div className="hidden md:flex space-x-8 text-base font-medium">
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Home</a>
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Explore</a>
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">About Us</a>
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Partners</a>
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Download App</a>
+      <Link to="/contact" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Contact Us</Link>
+      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Blog</a>
+    </div>
+    <div className="flex items-center space-x-6">
+      <button className="text-base font-medium text-gray-700 hover:text-orange-500 transition-colors duration-300 py-2 px-4 rounded hover:bg-orange-50">Login</button>
+      <button className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">Sign Up</button>
+    </div>
+  </nav>
+);
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
-
-      {/* Navbar */}
-
-      <nav className="flex items-center justify-between px-8 py-6 border-b shadow-sm bg-white transition-all duration-300">
-        <div className="text-3xl font-bold text-purple-700 hover:text-purple-800 transition-colors duration-300 cursor-pointer">Kaamigo</div>
-        <div className="hidden md:flex space-x-8 text-base font-medium">
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Home</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Explore</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">About Us</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Partners</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Download App</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Contact Us</a>
-          <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Blog</a>
-        </div>
-        <div className="flex items-center space-x-6">
-          <button className="text-base font-medium text-gray-700 hover:text-orange-500 transition-colors duration-300 py-2 px-4 rounded hover:bg-orange-50">Login</button>
-          <button className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">Sign Up</button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-orange-50 to-orange-100 py-32 text-center px-6">
@@ -222,3 +225,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+export { Navbar };
