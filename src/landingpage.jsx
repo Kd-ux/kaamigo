@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+const navLinkClass = ({ isActive }) =>
+  `py-2 px-3 rounded transition-colors duration-300 font-medium ${
+    isActive
+      ? 'text-purple-700 border-b-4 border-purple-500 bg-purple-50'
+      : 'hover:text-orange-500 hover:bg-orange-50 text-gray-800'
+  }`;
 
 const Navbar = () => (
   <nav className="flex items-center justify-between px-8 py-6 border-b shadow-sm bg-white transition-all duration-300">
     <div className="text-3xl font-bold text-purple-700 hover:text-purple-800 transition-colors duration-300 cursor-pointer">Kaamigo</div>
-    <div className="hidden md:flex space-x-8 text-base font-medium">
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Home</a>
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Explore</a>
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">About Us</a>
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Partners</a>
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Download App</a>
-      <Link to="/contact" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Contact Us</Link>
-      <a href="#" className="hover:text-orange-500 transition-colors duration-300 py-2 px-3 rounded hover:bg-orange-50">Blog</a>
+    <div className="hidden md:flex space-x-2 text-base font-medium">
+      <NavLink to="/" className={navLinkClass} end>Home</NavLink>
+      <span className="py-2 px-3 text-gray-500 cursor-not-allowed">Explore</span>
+      <span className="py-2 px-3 text-gray-500 cursor-not-allowed">About Us</span>
+      <NavLink to="/partners" className={navLinkClass}>Partners</NavLink>
+      <NavLink to="/coins" className={navLinkClass}>Coins</NavLink>
+      <NavLink to="/contact" className={navLinkClass}>Contact Us</NavLink>
+      <span className="py-2 px-3 text-gray-500 cursor-not-allowed">Blog</span>
     </div>
     <div className="flex items-center space-x-6">
       <button className="text-base font-medium text-gray-700 hover:text-orange-500 transition-colors duration-300 py-2 px-4 rounded hover:bg-orange-50">Login</button>
@@ -23,8 +30,6 @@ const Navbar = () => (
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
-      <Navbar />
-
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-orange-50 to-orange-100 py-32 text-center px-6">
         <h1 className="text-6xl font-extrabold text-gray-900 mb-6 animate-pulse">Reels Bhi. Rozgaar Bhi.</h1>
